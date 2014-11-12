@@ -10,12 +10,16 @@ var gSocket = null;
 
 function sendKey(code, callback) {
   if (gSocket!=null) {
-    gSocket.emit('hi', code);
+    console.log('emit');
+    gSocket.emit('keyCode', code);
   }
 }
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/README.md');
+});
+app.get('/display', function (req, res) {
+  res.sendfile(__dirname + '/display.html');
 });
 
 app.get('/:char', function (req, res) {
