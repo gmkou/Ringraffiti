@@ -5,13 +5,14 @@
 </head>
 <body>
 
-<div id="disp" style="font-size:300%">[Input Gesture]</div>
+<div style="font-size:100%">[Input Gesture]</div>
+<div id="disp" style="font-size:300%"></div>
 <img id="img" src=""/>
 
 <script>
 var socket = io.connect('/');
 socket.on('keyCode', function (data) {
-    document.getElementById("disp").innerHTML = data ;
+    document.getElementById("disp").innerHTML += data ;
 });
 </script>
 
