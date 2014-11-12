@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+<div id="disp" style="font-size:300%">[Input Gesture]</div>
+<img id="img" src=""/>
+
+<script>
+var socket = io.connect('/');
+socket.on('keyCode', function (data) {
+    document.getElementById("disp").innerHTML = data ;
+});
+</script>
+
+</body></html>
